@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Personajes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <app-personajes [personajes]="personajes">
+      <!-- aqui llamamos al componente personajes -->
+    </app-personajes>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <!-- cogemos de la documentacion ionic para hacer un scroll infinito de los personajes -->
+</ion-content>

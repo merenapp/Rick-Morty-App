@@ -1,0 +1,52 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{episodio.episode}}</ion-card-subtitle>
+    <ion-card-title>{{episodio.name}}</ion-card-title>
+    <p>{{episodio.air_date}}</p>
+
+
+    <div class="fav" *ngIf="[ifFav]=='true'">
+    
+      <ion-button fill="clear" (click)="borrar()">
+        <ion-icon slot="icon-only" name="trash">
+
+        </ion-icon>
+      </ion-button>
+    </div>
+    <div class="fav" *ngIf="[ifFav]=='false'">
+      <ion-button  fill="clear" (click)="fav()">
+        <ion-icon slot="icon-only" name="heart">
+  
+        </ion-icon>
+      </ion-button>
+    </div>
+    <div *ngIf="[ifFav]=='false'">
+      <!-- esto solo se muestra en la lista de episodios normales, no en los favoritos -->
+    <div class="abajo">
+      <!-- este es el botón para mostrar los personajes -->
+      <ion-button fill="clear" (click)="mostrar()">
+        <ion-icon slot="icon-only" name="ios-arrow-down"></ion-icon>
+      </ion-button>
+    </div>
+    
+    <div class="arriba" style="display: none">
+      <!-- este es el botón para ocultar los personajes -->
+      <ion-button fill="clear" (click)="ocultar()">
+        <ion-icon slot="icon-only" name="ios-arrow-up"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="personajes" style="display: none">
+      <p>Personajes:</p>
+      <div class="scroll">
+        <ion-list>      
+          <ion-item>
+            <app-personaje *ngFor="let character of this.personajes" [character]="character"></app-personaje>
+          </ion-item>
+        </ion-list>        
+      </div>
+
+    </div>
+  </div>
+  </ion-card-header> 
+
+</ion-card>

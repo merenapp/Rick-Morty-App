@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Personajes</ion-title>
+  </ion-toolbar>
+
+  <ion-segment scrollable
+               mode="md"
+               color="primary"
+               (ionChange) = "cambioEspecie( $event )">
+
+    <ion-segment-button mode = "md"
+                      *ngFor="let especie of especies"
+                      [value] = "especie">
+      <ion-label class="ion-text-capitalize">{{ especie }}</ion-label>
+
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-header>
+
+<ion-content>
+  <app-personajes [personajes]="personajes"></app-personajes>
+</ion-content>

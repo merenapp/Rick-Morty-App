@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Episodios Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    
+    <div *ngIf="favoritosService.favoritos.length === 0">
+      <ion-label>
+        Todavía no has añadido ningún episodio a favoritos
+      </ion-label>
+    </div>
+
+    <ion-list>
+        <app-episodios *ngIf="favoritosService.favoritos.length > 0"
+          [ifFav] = "true"
+          [episodios]="favoritosService.favoritos"
+          ></app-episodios>
+          <!-- la propiedad ifFav sirve para evaluar si está dentro de favoritos 
+          en vez de mostrar añadir a favoritos que muestre borrar de favoritos -->
+    </ion-list>
+</ion-content>

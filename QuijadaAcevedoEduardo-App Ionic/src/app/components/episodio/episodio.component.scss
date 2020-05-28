@@ -1,0 +1,35 @@
+.fav{
+    font-size: 25px !important;
+    position: absolute;
+    right: 10px;
+    top: 25px
+}
+
+.scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+ 
+    .scroll-item {
+        flex: 0 0 auto;
+  }
+//   para hacer el scroll saqué la información del siguiente foro:
+//   https://forum.ionicframework.com/t/ionic-4-what-is-alternative-to-deprecated-ion-scroll/140851/14
+  }
+  app-personaje {
+    width: 189.84px;
+    // esto es para que las imagenes de todos los personajes sean de igual tamaño,
+    // ya que sino cada imagen tenía un tamaño distinto
+}
+
+.abajo {
+    position: absolute;
+    right: 41%;
+    top: 65%;
+}
+
+.arriba {
+    position: absolute;
+    right: 41%;
+    top: 17%;
+}
